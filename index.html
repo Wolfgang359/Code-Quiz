@@ -17,7 +17,7 @@
                 style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
 
-        <div class="jumbotron">
+        <div id="jumbotron" class="jumbotron">
             <div id="header-div">
                 <h1 class="display-4 text-center">Welcome to the Code Quiz website!</h1>
                 <p class="lead text-center">Here, you will be able to test your knowlege of HTML, CSS, and
@@ -25,11 +25,19 @@
                 <hr class="my-4">
             </div>
             <div id="timer" class="d-flex justify-content-center">
-                <div id="minutes">03</div>
+                <div id="minutes">02</div>
                 <div id="seconds">00</div>
             </div>
-            <p id="question" class="text-center"> You will have 3 minutes to complete it. If you answer incorrectly,
-                time will be deducted. When you are ready, click the button below to start your Code Quiz!</p>
+
+            <br />
+
+            <h5 id="question" class="text-center"> You will have 2 minutes to complete it. If you answer incorrectly,
+                time will be deducted. When you are ready, click the button below to start your Code Quiz!</h5>
+
+            <br />
+
+            <h3 id="scoreInfo" class="text-center"> </h3>
+            <h1 id="scoreSpace" class="text-center"> </h1>
 
             <div id="answerSpace" class="justify-content-around" style="display: none;">
 
@@ -40,17 +48,62 @@
 
             </div>
 
+            <br />
+
             <div class="d-flex justify-content-center">
                 <button id="progressBtn" class="btn btn-success btn-lg">Take quiz!</button>
             </div>
 
         </div>
 
+        <div id="TotalLeaderBoard" style="display: none;">
 
+            <div class="d-flex justify-content-center">
+                <button id="saveScore" class="btn btn-secondary">Save your score</button>
+            </div>
 
+            <hr class="my-4" />
 
+            <div class="d-flex justify-content-center">
+                <h2 class="lead text-center">TOP 5 TEST TAKERS!</h2>
+            </div>
 
+            <div class="d-flex justify-content-center">
+                <h3 class="lead text-center"> (but only on your pc ;))</h3>
+            </div>
 
+            <hr class="my-4"/>
+
+            <div class="d-flex justify-content-center">
+                <table id="scoreTable">
+                    <tr>
+                        <th>1st</th>
+                        <th id="1st-place-name">John</th>
+                        <th id="1st-place-score">100</th>
+                    </tr>
+                    <tr>
+                        <th>2nd</th>
+                        <th id="2nd-place-name">Suzy</th>
+                        <th id="2nd-place-score">200</th>
+                    </tr>
+                    <tr>
+                        <th>3rd</th>
+                        <th id="3rd-place-name"></th>
+                        <th id="3rd-place-score"></th>
+                    </tr>
+                    <tr>
+                        <th>4th</th>
+                        <th id="4th-place-name"></th>
+                        <th id="4th-place-score"></th>
+                    </tr>
+                    <tr>
+                        <th>5th</th>
+                        <th id="5th-place-name"></th>
+                        <th id="5th-place-score"></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
     </div>
 
