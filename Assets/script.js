@@ -126,36 +126,6 @@ function storeScore(recordScore) {
     }
 }
 
-// function leaderboardTable() {
-
-// var len = highScores.length;
-// for (var i = 1; i < len; i++) {
-//     var tmp = highScores[i];
-//     for (var j = i - 1; j >= 0 && (highScores[j]['theirScore'] > tmp['theirScore']); j--) {
-//         highScores[j + 1] = highScores[j];
-//     }
-//     highScores[j + 1] = tmp;
-// }
-// highScores = highScores.reverse();
-
-
-// for (let i = 0; i < highScores.length; i++) {
-
-//     for (let j = 0; j < 2; j++) {
-//         var cellText = document.createTextNode(highScores[i][j]);
-//      };
-// };
-// };
-
-
-
-
-
-
-
-
-
-
 function setQuestion() {
     questionSpace.textContent = possibleQuestions[clicks].question;
     for (let i = 0; i < possibleQuestions[clicks].options.length; i++) {
@@ -169,7 +139,6 @@ function setQuestion() {
         } else if (i === 3) {
             btn4.textContent = option;
         };
-
     };
 };
 
@@ -189,7 +158,6 @@ function quizEnd() {
 
     alert("The quiz has been completed! Continue to learn your score.")
     clicks = 0;
-    // leaderboardTable();
 }
 
 for (const button of answerBtns) {
