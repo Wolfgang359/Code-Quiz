@@ -11,6 +11,7 @@ var scoreInfo = document.getElementById("scoreInfo");
 var timer = document.getElementById("timer");
 var leaderBoard = document.getElementById("TotalLeaderBoard")
 var saveScoreBtn = document.getElementById("saveScore");
+var leaderboardBtn = document.getElementById("viewLeaderboard");
 
 var answerBtns = document.querySelectorAll(".button");
 var btn1 = document.getElementById("option1");
@@ -109,17 +110,17 @@ function updateTimer() {
 }
 
 function formatTime(time) {
-    return (time >= 10) ? time : `0${time}`;
+    return (time >= 10) ? time : "0" + time;
 }
 
 function storeScore(recordScore) {
-    var initials = prompt(`Would you like to store your score of ${score} to the leaderboards? If so, put you initials below. If not, carry on!`);
+    var initials = prompt("Would you like to store your score of " + score + " to the leaderboards? If so, put you initials below. If not, carry on!");
     if (initials === null) {
         alert("Ok, then. Be like that.")
     } else {
         var savedScore = {
             name: initials,
-            theirScore: score
+            theirScore: recordScore
         };
         highScores.push(savedScore);
         localStorage.setItem("Leaderboard", JSON.stringify(highScores));
@@ -143,14 +144,14 @@ function setQuestion() {
 };
 
 function quizEnd() {
-    leaderBoard.classList.add("d-flex");
+    leaderBoard.style.display = "inherit"
     timer.classList.remove("d-flex");
     timer.style.display = "none";
     answerSpace.classList.remove("d-flex");
     progressBtn.style.display = "initial";
     progressBtn.textContent = "Take quiz again!";
 
-    scoreInfo.textContent = `You got ${score} out of 10 questions correct, and finished with ${timeLeft} seconds left. That gives you a score of:`;
+    scoreInfo.textContent = "You got " + score + " out of 10 questions correct, and finished with " + timeLeft + " seconds left. That gives you a score of:";
     questionSpace.textContent = "Your score has been calculated by taking your number of correct questions, and multiplying it by the time you have left. The highest possible score is 1200, and the lowest is 0."
 
     score = (score * timeLeft);
@@ -183,7 +184,6 @@ for (const button of mainBtns) {
         document.querySelector(".progress-bar").style.width = `${percent}%`;
 
         if (clicks === 1) {
-            leaderBoard.classList.remove("d-flex");
             timer.style.display = "initial";
             score = 0;
             scoreInfo.textContent = " ";
